@@ -1,0 +1,15 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '7.1'
+
+pod 'AFNetworking', '~> 2.5.3'
+pod 'BlocksKit', '~> 2.2.5'
+pod 'Masonry', '~> 0.6.1'
+pod 'ReactiveCocoa'
+pod 'SDWebImage', '~> 3.7.2'
+pod 'MJRefresh', '~> 1.4.6'
+pod 'KVOController', '~> 1.0.3'
+pod 'pop', '~> 1.0.7'
+pod 'Reachability', '~> 3.2'
+pod 'MJExtension', '~> 2.0.1'
+pod 'REFrostedViewController', '~> 2.4'
+pod 'POP+MCAnimate', '~> 2.0.1'
