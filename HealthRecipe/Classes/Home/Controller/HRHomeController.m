@@ -27,7 +27,7 @@
 #import "LTInfiniteScrollView.h"
 
 
-@interface HRHomeController () <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource>
+@interface HRHomeController ()// <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource>
 
 
 @property (nonatomic,assign) int currentPage;
@@ -53,7 +53,7 @@
     [self setupRefresh];
     
     //设置顶部滚动栏
-    [self setupScrollView];
+//    [self setupScrollView];
     
 }
 
@@ -64,7 +64,7 @@
     LTInfiniteScrollView *infiniteView = [[LTInfiniteScrollView alloc]initWithFrame:CGRectMake(0, -100, CGRectGetWidth(self.view.bounds), 100)];
     self.infiniteView = infiniteView;
     [self.collectionView addSubview:infiniteView];
-    infiniteView.dataSource = self;
+//    infiniteView.dataSource = self;
     [self.infiniteView reloadData];
     
 //    infiniteView.pagingEnabled = YES;
@@ -131,29 +131,29 @@
 
 #pragma mark - LTInfiniteViewDataSource,LTInfiniteViewDelegate
 
-- (NSInteger)numberOfViews {
-    return 100;
-}
-- (UIView *)viewAtIndex:(NSInteger)index reusingView:(UIView *)view {
-    if (view) {
-        ((UILabel*)view).text = [NSString stringWithFormat:@"%ld", index];
-        return view;
-    }
-    
-    UILabel *aView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 64, 64)];
-    aView.backgroundColor = [UIColor blackColor];
-    aView.layer.cornerRadius = 32;
-    aView.layer.masksToBounds = YES;
-    aView.backgroundColor = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    aView.textColor = [UIColor whiteColor];
-    aView.textAlignment = NSTextAlignmentCenter;
-    aView.text = [NSString stringWithFormat:@"%ld", index];
-    return aView;
-}
-
-- (NSInteger)numberOfVisibleViews {
-    return 1;
-}
+//- (NSInteger)numberOfViews {
+//    return 100;
+//}
+//- (UIView *)viewAtIndex:(NSInteger)index reusingView:(UIView *)view {
+//    if (view) {
+//        ((UILabel*)view).text = [NSString stringWithFormat:@"%ld", index];
+//        return view;
+//    }
+//    
+//    UILabel *aView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 64, 64)];
+//    aView.backgroundColor = [UIColor blackColor];
+//    aView.layer.cornerRadius = 32;
+//    aView.layer.masksToBounds = YES;
+//    aView.backgroundColor = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+//    aView.textColor = [UIColor whiteColor];
+//    aView.textAlignment = NSTextAlignmentCenter;
+//    aView.text = [NSString stringWithFormat:@"%ld", index];
+//    return aView;
+//}
+//
+//- (NSInteger)numberOfVisibleViews {
+//    return 1;
+//}
 
 #pragma mark - 通知响应方法
 - (void)categoryDidChange:(NSNotification *)noti {
