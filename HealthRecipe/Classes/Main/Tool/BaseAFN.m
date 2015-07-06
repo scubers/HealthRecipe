@@ -8,6 +8,7 @@
 
 #import "BaseAFN.h"
 #import "AFNetworking.h"
+#import "HRTempDataTool.h"
 
 @implementation BaseAFN
 

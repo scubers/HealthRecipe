@@ -10,9 +10,9 @@
 		A8155CA81B3AF9DD0099CD32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8155CA71B3AF9DD0099CD32 /* Images.xcassets */; };
 		A81DF5941B22D6C0002D5E0A /* HRRecipeService.m in Sources */ = {isa = PBXBuildFile; fileRef = A81DF5931B22D6C0002D5E0A /* HRRecipeService.m */; };
 		A82442291B38412E009A6C2C /* HRMineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A82442281B38412E009A6C2C /* HRMineTool.m */; };
+		A83E15A91B468E9F00E5B6E7 /* HealthRecipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E15A81B468E9F00E5B6E7 /* HealthRecipeTests.m */; };
 		A83E3D4A1B3E5499007F7A34 /* LTInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E3D3E1B3E5499007F7A34 /* LTInfiniteScrollView.m */; };
 		A873D9FA1B229C96004B63E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A873D9F81B229C96004B63E4 /* LaunchScreen.xib */; };
-		A873DA061B229C96004B63E4 /* HealthRecipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A873DA051B229C96004B63E4 /* HealthRecipeTests.m */; };
 		A873DA171B229CE4004B63E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A873DA131B229CE4004B63E4 /* AppDelegate.m */; };
 		A873DA181B229CE4004B63E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A873DA141B229CE4004B63E4 /* main.m */; };
 		A873DA231B229E90004B63E4 /* UIImage+JR.m in Sources */ = {isa = PBXBuildFile; fileRef = A873DA221B229E90004B63E4 /* UIImage+JR.m */; };
@@ -38,6 +38,7 @@
 		A8B5B7061B36C5F9006DAFAF /* HRRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B5B7041B36C5F9006DAFAF /* HRRecipeCell.m */; };
 		A8B5B7071B36C5F9006DAFAF /* HRRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B5B7051B36C5F9006DAFAF /* HRRecipeCell.xib */; };
 		A8B5B7091B36EA77006DAFAF /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8B5B7081B36EA77006DAFAF /* Categories.plist */; };
+		A8C811571B467ECA0025F848 /* HRTempDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C811561B467ECA0025F848 /* HRTempDataTool.m */; };
 		A8D33C5C1B37BF0000F1BC3F /* JCRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D33C5B1B37BF0000F1BC3F /* JCRBlurView.m */; };
 		A8D33C841B37C24300F1BC3F /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D33C641B37C24300F1BC3F /* GLProgram.m */; };
 		A8D33C851B37C24300F1BC3F /* GPUImageBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D33C661B37C24300F1BC3F /* GPUImageBuffer.m */; };
@@ -89,6 +90,7 @@
 		A81DF5931B22D6C0002D5E0A /* HRRecipeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRRecipeService.m; sourceTree = "<group>"; };
 		A82442271B38412E009A6C2C /* HRMineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRMineTool.h; sourceTree = "<group>"; };
 		A82442281B38412E009A6C2C /* HRMineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRMineTool.m; sourceTree = "<group>"; };
+		A83E15A81B468E9F00E5B6E7 /* HealthRecipeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthRecipeTests.m; sourceTree = "<group>"; };
 		A83E3D3D1B3E5499007F7A34 /* LTInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInfiniteScrollView.h; sourceTree = "<group>"; };
 		A83E3D3E1B3E5499007F7A34 /* LTInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInfiniteScrollView.m; sourceTree = "<group>"; };
 		A873D9E61B229C96004B63E4 /* HealthRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +98,6 @@
 		A873D9F91B229C96004B63E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A873D9FF1B229C96004B63E4 /* HealthRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A873DA041B229C96004B63E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A873DA051B229C96004B63E4 /* HealthRecipeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthRecipeTests.m; sourceTree = "<group>"; };
 		A873DA121B229CE4004B63E4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A873DA131B229CE4004B63E4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A873DA141B229CE4004B63E4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -143,6 +144,8 @@
 		A8B5B7041B36C5F9006DAFAF /* HRRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRRecipeCell.m; sourceTree = "<group>"; };
 		A8B5B7051B36C5F9006DAFAF /* HRRecipeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRRecipeCell.xib; sourceTree = "<group>"; };
 		A8B5B7081B36EA77006DAFAF /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
+		A8C811551B467ECA0025F848 /* HRTempDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRTempDataTool.h; sourceTree = "<group>"; };
+		A8C811561B467ECA0025F848 /* HRTempDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRTempDataTool.m; sourceTree = "<group>"; };
 		A8D33C5A1B37BF0000F1BC3F /* JCRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCRBlurView.h; sourceTree = "<group>"; };
 		A8D33C5B1B37BF0000F1BC3F /* JCRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCRBlurView.m; sourceTree = "<group>"; };
 		A8D33C631B37C24300F1BC3F /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
@@ -306,7 +309,7 @@
 		A873DA021B229C96004B63E4 /* HealthRecipeTests */ = {
 			isa = PBXGroup;
 			children = (
-				A873DA051B229C96004B63E4 /* HealthRecipeTests.m */,
+				A83E15A81B468E9F00E5B6E7 /* HealthRecipeTests.m */,
 				A873DA031B229C96004B63E4 /* Supporting Files */,
 			);
 			path = HealthRecipeTests;
@@ -466,6 +469,8 @@
 				A8A9FD731B22C1F90040B0E3 /* BaseAFN.m */,
 				A8A9FD751B22C21B0040B0E3 /* HRRecipeAPI.h */,
 				A8A9FD761B22C21B0040B0E3 /* HRRecipeAPI.m */,
+				A8C811551B467ECA0025F848 /* HRTempDataTool.h */,
+				A8C811561B467ECA0025F848 /* HRTempDataTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -740,6 +745,7 @@
 				A8A9FDB01B22CE680040B0E3 /* HRRecipe.m in Sources */,
 				A8D8CF351B2435F6001A73FC /* DRNRealTimeBlurView.m in Sources */,
 				A8B5B7061B36C5F9006DAFAF /* HRRecipeCell.m in Sources */,
+				A8C811571B467ECA0025F848 /* HRTempDataTool.m in Sources */,
 				A8D33C8A1B37C24300F1BC3F /* GPUImageTextureOutput.m in Sources */,
 				A83E3D4A1B3E5499007F7A34 /* LTInfiniteScrollView.m in Sources */,
 				A888F92B1B234D38000136CD /* HRHomeController.m in Sources */,
@@ -778,7 +784,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A873DA061B229C96004B63E4 /* HealthRecipeTests.m in Sources */,
+				A83E15A91B468E9F00E5B6E7 /* HealthRecipeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

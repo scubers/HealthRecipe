@@ -3,7 +3,7 @@
 //  MJExtension
 //
 //  Created by mj on 13-8-24.
-//  Copyright (c) 2013年 itcast. All rights reserved.
+//  Copyright (c) 2013年 小码哥. All rights reserved.
 //
 
 #import "NSObject+MJKeyValue.h"
@@ -36,12 +36,12 @@ static NSNumberFormatter *_numberFormatter;
     return [self objectWithKeyValues:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil] error:error];
 }
 
-+ (instancetype)objectWithKeyValues:(NSDictionary *)keyValues
++ (instancetype)objectWithKeyValues:(id)keyValues
 {
     return [self objectWithKeyValues:keyValues error:nil];
 }
 
-+ (instancetype)objectWithKeyValues:(NSDictionary *)keyValues error:(NSError *__autoreleasing *)error
++ (instancetype)objectWithKeyValues:(id)keyValues error:(NSError *__autoreleasing *)error
 {
     return [self objectWithKeyValues:keyValues context:nil error:error];
 }
@@ -53,6 +53,7 @@ static NSNumberFormatter *_numberFormatter;
 
 + (instancetype)objectWithKeyValues:(id)keyValues context:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
+    if (keyValues == nil) return nil;
     if ([self isSubclassOfClass:[NSManagedObject class]] && context) {
         return [[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self) inManagedObjectContext:context] setKeyValues:keyValues context:context error:error];
     }
@@ -83,12 +84,12 @@ static NSNumberFormatter *_numberFormatter;
     return [self objectWithKeyValues:[NSDictionary dictionaryWithContentsOfFile:file] error:error];
 }
 
-- (instancetype)setKeyValues:(NSDictionary *)keyValues
+- (instancetype)setKeyValues:(id)keyValues
 {
     return [self setKeyValues:keyValues error:nil];
 }
 
-- (instancetype)setKeyValues:(NSDictionary *)keyValues error:(NSError *__autoreleasing *)error
+- (instancetype)setKeyValues:(id)keyValues error:(NSError *__autoreleasing *)error
 {
     return [self setKeyValues:keyValues context:nil error:error];
 }
@@ -97,7 +98,9 @@ static NSNumberFormatter *_numberFormatter;
 {
     return [self setKeyValues:keyValues context:context error:nil];
 }
-
+/**
+ 核心代码：
+ */
 - (instancetype)setKeyValues:(id)keyValues context:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
     // 如果是JSON字符串
@@ -108,10 +111,14 @@ static NSNumberFormatter *_numberFormatter;
     MJAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     
     @try {
-        NSArray *ignoredPropertyNames = [[self class] totalIgnoredPropertyNames];
+        Class class = [self class];
+        NSArray *allowedPropertyNames = [class totalAllowedPropertyNames];
+        NSArray *ignoredPropertyNames = [class totalIgnoredPropertyNames];
         
-        [[self class] enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
+        //通过封装的方法回调一个通过运行时编写的，用于返回属性列表的方法。
+        [class enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
             // 0.检测是否被忽略
+            if (allowedPropertyNames.count && ![allowedPropertyNames containsObject:property.name]) return;
             if ([ignoredPropertyNames containsObject:property.name]) return;
             
             // 1.取出属性值
@@ -267,10 +274,13 @@ static NSNumberFormatter *_numberFormatter;
     __block NSMutableDictionary *keyValues = [NSMutableDictionary dictionary];
     
     @try {
-        NSArray *ignoredPropertyNames = [[self class] totalIgnoredPropertyNames];
+        Class class = [self class];
+        NSArray *allowedPropertyNames = [class totalAllowedPropertyNames];
+        NSArray *ignoredPropertyNames = [class totalIgnoredPropertyNames];
         
-        [[self class] enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
+        [class enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
             // 0.检测是否被忽略
+            if (allowedPropertyNames.count && ![allowedPropertyNames containsObject:property.name]) return;
             if ([ignoredPropertyNames containsObject:property.name]) return;
             
             // 1.取出属性值
@@ -308,6 +318,9 @@ static NSNumberFormatter *_numberFormatter;
                 }
             }];
         }];
+        
+        // 去除系统自动增加的元素
+        [keyValues removeObjectsForKeys:@[@"superclass", @"debugDescription", @"description", @"hash"]];
         
         // 转换完毕
         if ([self respondsToSelector:@selector(objectDidFinishConvertingToKeyValues)]) {

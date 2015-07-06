@@ -13,7 +13,6 @@
 #import "HRRecipeCategoryResult.h"
 #import "HRRecipeQueryParam.h"
 #import "HRRecipeQueryResult.h"
-
 #import "HRRecipeResult.h"
 #import <MJExtension.h>
 
@@ -27,7 +26,6 @@
     
     [BaseAFN getWith:url params:param.keyValues headers:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *dict) {
     
-        
         HRRecipeCategoryResult *result = [HRRecipeCategoryResult objectWithKeyValues:dict];
         
         if (success && result.success) {
@@ -49,7 +47,6 @@
     NSString *url = @"http://apis.baidu.com/yi18/menu/search";
     
     [BaseAFN getWith:url params:param.keyValues headers:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *dict) {
-        
         
         HRRecipeQueryResult *result = [HRRecipeQueryResult objectWithKeyValues:dict];
         

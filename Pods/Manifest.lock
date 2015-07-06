@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.5.3):
-    - AFNetworking/NSURLConnection (= 2.5.3)
-    - AFNetworking/NSURLSession (= 2.5.3)
-    - AFNetworking/Reachability (= 2.5.3)
-    - AFNetworking/Security (= 2.5.3)
-    - AFNetworking/Serialization (= 2.5.3)
-    - AFNetworking/UIKit (= 2.5.3)
-  - AFNetworking/NSURLConnection (2.5.3):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.3):
+  - AFNetworking/NSURLSession (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.3)
-  - AFNetworking/Security (2.5.3)
-  - AFNetworking/Serialization (2.5.3)
-  - AFNetworking/UIKit (2.5.3):
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - BlocksKit (2.2.5):
@@ -35,10 +35,15 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
   - KVOController (1.0.3)
   - Masonry (0.6.1)
-  - MJExtension (2.0.1)
-  - MJRefresh (1.4.6)
+  - MJExtension (2.0.4)
+  - MJRefresh (1.4.7)
   - pop (1.0.7)
   - POP+MCAnimate (2.0.1):
     - pop (~> 1.0)
@@ -78,6 +83,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.3)
   - BlocksKit (~> 2.2.5)
+  - FMDB (~> 2.5)
   - KVOController (~> 1.0.3)
   - Masonry (~> 0.6.1)
   - MJExtension (~> 2.0.1)
@@ -90,12 +96,13 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.2)
 
 SPEC CHECKSUMS:
-  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
-  MJExtension: 524b4b939199ea34dc9e822babb915238c3c9167
-  MJRefresh: 2eaa3fd8f67fbb86497840fb0167446f7eb61dc7
+  MJExtension: 90503779f5c2608b76b5b0f41efdb05c080d1976
+  MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   POP+MCAnimate: a99e209148c602512de487f1160a44bf78572024
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -103,4 +110,4 @@ SPEC CHECKSUMS:
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
-COCOAPODS: 0.37.0
+COCOAPODS: 0.37.2

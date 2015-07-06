@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <REFrostedViewController.h>
 #import "HRHomeTool.h"
+#import "HRTempDataTool.h"
 
 
 @interface AppDelegate () <REFrostedViewControllerDelegate>
@@ -23,22 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     JRLog(@"%@",SandboxPath);
     
-//    // Create content and menu controllers
-//    //
-//    HRNavigationController *navigationController = [[HRNavigationController alloc] initWithRootViewController:[[HRHomeController alloc] init]];
-//    HRMenuController *menuController = [[HRMenuController alloc] initWithStyle:UITableViewStylePlain];
-//    
-//    // Create frosted view controller
-//    //
-//    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
-//    frostedViewController.direction = REFrostedViewControllerDirectionLeft;
-//    frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
-//    frostedViewController.liveBlur = YES;
-//    frostedViewController.delegate = self;
-//
     REFrostedViewController *frostedViewController = [HRHomeTool frostedViewController];
-    // Make it a root controller
-    //
     self.window.rootViewController = frostedViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

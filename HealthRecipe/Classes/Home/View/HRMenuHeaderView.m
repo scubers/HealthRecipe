@@ -25,6 +25,7 @@
 @implementation HRMenuHeaderView
 
 #pragma mark - 初始化
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if(self = [super initWithFrame:frame]) {
         [self setupSubviews];
@@ -39,7 +40,7 @@
     UIImageView *headView = [[UIImageView alloc] initWithImage:img];
     [self addSubview:headView];
     self.headView = headView;
-    
+
     //添加约束abca
     [headView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(headView.superview);
@@ -81,6 +82,7 @@
     [self removeAnimateTimer];
     WEAK_SELF(ws)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
         [NSObject pop_animate:^{
             ws.headView.pop_duration = 2;
             ws.headView.pop_linear.bounds = CGRectMake(0, 0, 180, 180);

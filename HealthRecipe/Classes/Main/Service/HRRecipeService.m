@@ -16,6 +16,7 @@
 #import "HRRecipeCategory.h"
 #import "HRRecipe.h"
 #import "HRRecipeResult.h"
+#import "HRTempDataTool.h"
 
 #define CategoriesFile @"Categories.plist"
 
@@ -107,20 +108,34 @@
  */
 + (void)getRecipeById:(NSNumber *)ID success:(void (^)(HRRecipe *recipe))success failure:(void (^)(NSError *error))failure {
     
+    if (!ID) return;
+    
     HRRecipeQueryParam *query = [[HRRecipeQueryParam alloc] init];
-    if (ID) {
-        query.ID = ID;
-    }
-    [HRRecipeAPI recipeDetail:query success:^(HRRecipeResult *result) {
+    query.ID = ID;
+    
+    HRRecipe *recipe = [HRTempDataTool tempRecipeWithID:ID];
+    
+    if (!recipe) {
+        [HRRecipeAPI recipeDetail:query success:^(HRRecipeResult *result) {
+            [HRTempDataTool saveTempRecipe:result.recipe];
+            if (success) {
+                success(result.recipe);
+            }
+        } failure:^(NSError *error) {
+            if (failure) {
+                failure(error);
+            }
+        }];
+    } else {
         if (success) {
-            success(result.recipe);
+            success(recipe);
         }
-    } failure:^(NSError *error) {
         if (failure) {
-            failure(error);
+            failure(nil);
         }
-    }];
+    }
 }
+
 /**
  *  返回所有食谱类别
  */

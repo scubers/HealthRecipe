@@ -64,6 +64,7 @@ static NSString *ID = @"cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     HRRecipe *recipe = self.recipes[indexPath.row];
+    
     self.detailController.recipe = recipe;
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     CGRect rect = [cell convertRect:cell.bounds toView:self.view.window];
